@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.Table; 
 
 @Entity
 @Table(name = "tb_game")
@@ -24,14 +24,18 @@ public class Game {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
-	private String shortDescrption;
-	private String longDescrption; 
+	
+	@Column(columnDefinition = "TEXT")
+	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
+	private String longDescription; 
 	
 	public game() {	
 	}
 
 	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
-			String shortDescrption, String longDescrption) {
+			String shortDescription, String longDescription) {
 		this.id = id;
 		this.title = title;
 		this.year = year;
@@ -39,8 +43,8 @@ public class Game {
 		this.platforms = platforms;
 		this.score = score;
 		this.imgUrl = imgUrl;
-		this.shortDescrption = shortDescrption;
-		this.longDescrption = longDescrption;
+		this.shortDescrption = shortDescription;
+		this.longDescription = longDescription;
 	}
 
 	public Long getId() {
@@ -99,20 +103,20 @@ public class Game {
 		this.imgUrl = imgUrl;
 	}
 
-	public String getShortDescrption() {
-		return shortDescrption;
+	public String getShortDescription() {
+		return shortDescription;
 	}
 
-	public void setShortDescrption(String shortDescrption) {
-		this.shortDescrption = shortDescrption;
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 
-	public String getLongDescrption() {
-		return longDescrption;
+	public String getLongDescription() {
+		return longDescription;
 	}
 
-	public void setLongDescrption(String longDescrption) {
-		this.longDescrption = longDescrption;
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
 	}
 
 	@Override
