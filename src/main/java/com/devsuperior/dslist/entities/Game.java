@@ -31,7 +31,7 @@ public class Game {
 	@Column(columnDefinition = "TEXT")
 	private String longDescription; 
 	
-	public game() {	
+	public Game() {	
 	}
 
 	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
@@ -43,7 +43,7 @@ public class Game {
 		this.platforms = platforms;
 		this.score = score;
 		this.imgUrl = imgUrl;
-		this.shortDescrption = shortDescription;
+		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
 
